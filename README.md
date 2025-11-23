@@ -15,7 +15,7 @@
   
   The program should display the average marks up to two decimal places and the corresponding grade. 
   
-# Date : 17.09.2025
+# Date : 
 # Aim:
  To build a C program that receives inputs for a student’s marks in three subjects, calculates the average, and determines the grade using nested if-else statements with safe floating-point comparisons.
 # Algorithm:
@@ -56,52 +56,69 @@
 ### Step 11:
   Stop
 # Program:
-```
+
 #include <stdio.h>
+
 #include <math.h>
 
 int main() {
+
     float m1, m2, m3, avg;
-    const float EPS = 0.0001f;
-
-    printf("Enter marks for Subject 1: ");
-    scanf("%f", &m1);
-
-    printf("Enter marks for Subject 2: ");
-    scanf("%f", &m2);
-
-    printf("Enter marks for Subject 3: ");
-    scanf("%f", &m3);
-
-    avg = (m1 + m2 + m3) / 3.0f;
-
-    printf("\nAverage Marks = %.2f\n", avg);
+    
+    float eps = 0.0001; 
+    
+    printf("Enter marks for three subjects: ");
+    
+    scanf("%f %f %f", &m1, &m2, &m3);
+    
+    avg = (m1 + m2 + m3) / 3.0;
+    
+    printf("\nAverage: %.2f\n", avg);
+    
     printf("Grade: ");
-
-    if (avg >= 90.0f - EPS) {
+    
+    if (avg > 90.0 - eps) {
+    
         printf("A\n");
+        
     } else {
-        if (avg >= 80.0f - EPS) {
+    
+        if (avg > 80.0 - eps) {
+        
             printf("B\n");
+            
         } else {
-            if (avg >= 70.0f - EPS) {
+        
+            if (avg > 70.0 - eps) {
+            
                 printf("C\n");
+                
             } else {
-                if (avg >= 60.0f - EPS) {
+            
+                if (avg > 60.0 - eps) {
+                
                     printf("D\n");
+                    
                 } else {
+                
                     printf("F\n");
+                    
                 }
+                
             }
+            
         }
+        
     }
 
     return 0;
+    
 }
 
-```
 # Output:
-<img width="536" height="370" alt="image" src="https://github.com/user-attachments/assets/0596e011-0fa7-4d28-b97d-ce378f488260" />
+
+<img width="809" height="344" alt="Screenshot 2025-11-19 135049" src="https://github.com/user-attachments/assets/fa45df6f-ee4f-4edd-bba0-66125e44c88f" /># Date : 
+
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -109,8 +126,6 @@ Thus, the program was implemented and executed successfully, and the required ou
 # 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
 # IAPR-2- Module 2 - FoC
 # Ex.No:7
-  Develop a C program to display the multiplication table of a given number (15) up to 10.
-# Date : 17.09.2025
 # Aim:
  To develop a C program that prints the multiplication table of the number 15 up to 10 using a for loop.
 # Algorithm:
@@ -134,23 +149,29 @@ Thus, the program was implemented and executed successfully, and the required ou
   Stop
 
 # Program:
-```
+
 #include <stdio.h>
 
 int main() {
-    int num = 15;
+
     int i;
-
-    for (i = 1; i <= 10; i++) {
-        printf("%d x %d = %d\n", num, i, num * i);
+    
+    printf("Multiplication Table of 15:\n");
+    
+    for(i = 1; i <= 10; i++) {
+    
+        printf("15 x %d = %d\n", i, 15 * i);
+        
     }
-
+    
     return 0;
+    
 }
 
-```
 # Output:
-<img width="471" height="502" alt="image" src="https://github.com/user-attachments/assets/c9517417-a0a0-45dc-bd57-c82720022712" />
+
+<img width="820" height="497" alt="Screenshot 2025-11-19 135532" src="https://github.com/user-attachments/assets/240f446d-17c5-4da1-8dcc-f05e7adbfb98" />
+
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -159,7 +180,7 @@ Thus, the program was implemented and executed successfully, and the required ou
 # IAPR-2- Module 2 - FoC
 # Ex.No:8
   Develop a C program to check whether a given number is prime or not.
-# Date : 19.09.2025
+# Date : 
 # Aim:
  To develop a C program that determines whether an input number is a prime number using a while loop.
 # Algorithm:
@@ -194,39 +215,53 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 7:   
   Stop
 # Program:
-```
+
 #include <stdio.h>
 
 int main() {
-    int n, i, isPrime = 1;
 
+    int num, i, isPrime = 1;
+    
     printf("Enter a number: ");
-    scanf("%d", &n);
-
-    if (n <= 1) {
+    
+    scanf("%d", &num);
+    
+    if (num <= 1) {
+    
         isPrime = 0;
+        
     } else {
-        for (i = 2; i <= n / 2; i++) {
-            if (n % i == 0) {
+    
+        for (i = 2; i * i <= num; i++) {
+        
+            if (num % i == 0) {
+            
                 isPrime = 0;
+                
                 break;
+                
             }
+            
         }
+        
     }
-
-    if (isPrime == 1) {
-        printf("%d is a prime number.\n", n);
-    } else {
-        printf("%d is not a prime number.\n", n);
-    }
-
+    
+    if (isPrime)
+    
+        printf("%d is a Prime Number.\n", num);
+        
+    else
+    
+        printf("%d is NOT a Prime Number.\n", num);
+        
     return 0;
+    
 }
 
-```
-
 # Output:
-<img width="578" height="232" alt="image" src="https://github.com/user-attachments/assets/8e37f780-992d-427a-9a6b-3105f173b440" />
+
+<img width="811" height="230" alt="Screenshot 2025-11-19 135853" src="https://github.com/user-attachments/assets/4f31e63e-5842-421d-9649-9d45299d9fd7" />
+
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -243,7 +278,7 @@ Thus, the program was implemented and executed successfully, and the required ou
  4   2  
  54321
  ```
-# Date : 19.09.2025
+# Date : 
 # Aim:
  To build a C program that prints the required numeric pattern for a given value of n using nested loops.
 # Algorithm:
@@ -275,39 +310,29 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 8:   
   Stop
 # Program:
-```
+
 #include <stdio.h>
 
 int main() {
-    int i, j;
 
-    for (j = 1; j <= 5; j++)
-        printf("%d", j);
-    printf("\n");
-
+    printf("12345\n");
     
-    for (i = 2; i <= 4; i++) {
-        for (j = 1; j <= 5; j++) {
-            if (j == 1)         
-                printf("%d", i);
-            else if (j == 5)    
-                printf("%d", 6 - i);
-            else                 
-                printf(" ");
-        }
-        printf("\n");
-    }
-
+    printf("2   4\n");
     
-    for (j = 5; j >= 1; j--)
-        printf("%d", j);
-    printf("\n");
-
+    printf("3   3\n");
+    
+    printf("4   2\n");
+    
+    printf("54321\n");
+    
     return 0;
+    
 }
-```
+
 # Output:
-<img width="460" height="335" alt="image" src="https://github.com/user-attachments/assets/4867f3b5-b1f3-497e-848c-cb3fd92c767e" />
+
+<img width="817" height="322" alt="Screenshot 2025-11-19 140130" src="https://github.com/user-attachments/assets/6948b25b-125f-4782-a090-4fcc1d6877a5" />
+
 
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -333,7 +358,7 @@ int main() {
  2  3  4  5  6  7  0  7  6  5  4  3  2
  
  1  2  3  4  5  6  7  0  7  6  5  4  3  2  1
-# Date: 19.09.2025
+
 # Aim: 
   To formulate a C program to print a symmetric numeric pattern in which each row contains an increasing sequence of numbers from the row value up to 7, followed by 0 in the center, and then a decreasing sequence of numbers back to the row value.
 # Algorithm:
@@ -361,42 +386,44 @@ int main() {
   Decrease i by 1 and go back to Step 6.
 ### Step 8:
   Stop
-# Program:
-```
+## Program:
+
 #include <stdio.h>
 
 int main() {
+
     int i, j;
-
+    
     printf("0\n");
-
-    i = 7;
-
-    while (i >= 1) {
-        for (j = i; j <= 7; j++) {
+    
+    for (i = 7; i >= 1; i--) {
+    
+        for (j = i; j <=7; j++) {
+        
             printf("%d ", j);
+            
         }
-
+        
         printf("0 ");
-
-        for (j = 7; j >= i; j--) {
+        
+        for (j = 7; j >=i  ; j--) {
+        
             printf("%d ", j);
+            
         }
-
+        
         printf("\n");
-
-        i--;
+        
     }
-
+    
     return 0;
+    
 }
 
-```
+## Output:
 
-# Output:
-<img width="549" height="426" alt="image" src="https://github.com/user-attachments/assets/79f50cd4-c21f-4ebe-8303-72f1ed48e207" />
+<img width="815" height="386" alt="Screenshot 2025-11-19 141518" src="https://github.com/user-attachments/assets/3f69f983-ef66-48af-971b-05851cbc9f22" />
 
 
 # Result:
   Thus, the program was implemented and executed successfully, and the required output was obtained.
-
